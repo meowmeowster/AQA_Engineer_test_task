@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from Pages.BasePage import BasePage
+from Pages.API import API
 
 
-class BaseTest(BasePage):
+class BaseTestUI(BasePage):
     from Pages.BasePage import BasePage
     from Pages.MainPage import MainPage
     from Pages.Mattress import Mattress
@@ -13,3 +14,7 @@ class BaseTest(BasePage):
     pass
 
 
+class BaseTestAPI(API):
+    from Pages.API import API
+
+    pass

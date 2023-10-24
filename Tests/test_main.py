@@ -4,12 +4,12 @@
 import pytest
 import allure
 from environment import load_address
-from Tests.test_base import BaseTest
+from Tests.test_base import BaseTestUI
 
 
 @allure.feature('MAIN PAGE')
 @allure.severity(allure.severity_level.CRITICAL)
-class Tests(BaseTest):
+class Tests(BaseTestUI):
 
     @pytest.mark.order(3)
     @allure.title("Тестовое задание - проверка UI флоу добавления товара в корзину")

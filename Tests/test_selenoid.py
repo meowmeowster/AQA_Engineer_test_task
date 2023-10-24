@@ -4,12 +4,12 @@
 import pytest
 import allure
 from environment import load_address
-from Tests.test_base import BaseTest
+from Tests.test_base import BaseTestUI
 
 
 @allure.feature('SERVICE SMOKE')
 @allure.severity(allure.severity_level.BLOCKER)
-class Tests(BaseTest):
+class Tests(BaseTestUI):
 
     @pytest.mark.order(1)
     @allure.title("Проверка, что контейнер с браузером успешно запускается")
