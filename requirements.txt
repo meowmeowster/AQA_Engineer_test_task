@@ -1,0 +1,15 @@
+pytest~=7.4.2
+pytest-order~=1.1.0
+pytest-dependency~=0.5.1
+pytest-logger~=0.5.1
+pytest-xvfb==3.0.0
+python-dateutil~=2.8.2
+requests~=2.31.0
+selenium~=4.14.0
+webdriver-manager~=4.0.1
+behave~=1.2.6
+parse~=1.19.0
+pyinstaller~=6.1.0
+allure-pytest~=2.13.2
+pytest-repeat~=0.9.3
+pillow~=10.1.0
