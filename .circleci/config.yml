@@ -25,10 +25,10 @@ jobs:
           docker_layer_caching: true
       - run:
           name: "Run selenoid"
-          command: "cd docker; docker-compose up -d; docker inspect --format='{{.NetworkSettings.IPAddress}}' docker-selenoid-1"
+          command: "cd docker; docker-compose up -d"
       - run:
-          name: "check the container"
-          command: "docker inspect --format='{{.NetworkSettings.IPAddress}}' docker-selenoid-1"
+          name: "Check the container"
+          command: "docker ps -a; docker inspect --format='{{.NetworkSettings.IPAddress}}' docker_selenoid_1"
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; ./scripts/run.sh"
