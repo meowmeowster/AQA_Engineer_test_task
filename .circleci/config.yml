@@ -21,8 +21,14 @@ jobs:
           name: "Install the requirements"
           command: "chmod +x scripts/install.sh; ./scripts/install.sh"
       - run:
+          name: "Run selenoid"
+          command: "cd docker; docker-compose up -d"
+      - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; ./scripts/run.sh"
+      - run:
+          name: "Generate the test report"
+          command: "chmod +x scripts/report.sh; ./scripts/report.sh"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
