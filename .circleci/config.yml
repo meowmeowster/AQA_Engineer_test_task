@@ -19,10 +19,10 @@ jobs:
           command: "python --version"
       - run:
           name: "Install the requirements"
-          command: "./scripts/install.sh"
+          command: "chmod +x scripts/install.sh; ./scripts/install.sh"
       - run:
           name: "Run the tests"
-          command: "./scripts/run.sh"
+          command: "chmod +x scripts/run.sh; ./scripts/run.sh"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
