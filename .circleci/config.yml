@@ -20,6 +20,9 @@ jobs:
       - run:
           name: "Install the requirements"
           command: "chmod +x scripts/install.sh; ./scripts/install.sh"
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
       - run:
           name: "Run selenoid"
           command: "cd docker; docker-compose up -d"
