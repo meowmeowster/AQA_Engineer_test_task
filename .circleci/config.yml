@@ -5,7 +5,7 @@ version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
-  preconditions:
+  main:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
@@ -15,12 +15,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Check python"
+          name: "Check python version"
           command: "python --version"
-
+      - run:
+          name: "Install the requirements"
+          command: "./scripts/install.sh"
+      - run:
+          name: "Run the tests"
+          command: "./scripts/run.sh"
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   aqa-engineer-test-task:
     jobs:
-      - preconditions
+      - main
