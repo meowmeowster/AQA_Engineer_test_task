@@ -28,7 +28,7 @@ jobs:
           command: "cd docker; docker-compose up -d"
       - run:
           name: "Check the container"
-          command: "docker ps -a; docker inspect --format='{{.NetworkSettings.IPAddress}}' docker_selenoid_1"
+          command: "docker ps -a; docker inspect --format='{{.NetworkSettings.IPAddress}}' docker-selenoid-1"
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; ./scripts/run.sh"
