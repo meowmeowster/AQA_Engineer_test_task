@@ -1,3 +1,3 @@
 . aqa-venv/bin/activate
 which python
-python -m allure serve allure-results
+python -m allure generate --clean
