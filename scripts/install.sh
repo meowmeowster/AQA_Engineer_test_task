@@ -7,3 +7,4 @@ pwd
 ls -la
 pip install --upgrade pip
 pip install -r ./requirements.txt
+docker pull selenoid/chrome:117.0
