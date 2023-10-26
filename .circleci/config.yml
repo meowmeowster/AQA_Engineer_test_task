@@ -31,7 +31,7 @@ jobs:
           command: "chmod +x scripts/run.sh; bash -v ./scripts/run.sh"
       - run:
           name: "Generate the test report"
-          command: "chmod +x scripts/report.sh; bash -v ./scripts/report.sh"
+          command: ". aqa-venv/bin/activate; python -m allure generate --report-dir allure-report allure-results"
       - store_test_results:
           path: /home/circleci/project/allure-report
 # Orchestrate jobs using workflows
