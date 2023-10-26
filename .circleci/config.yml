@@ -1,7 +1,8 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
-
+orbs:
+  node: circleci/node@5.1.0
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -14,6 +15,13 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
+      - node/install:
+        install-yarn: true
+        node-version: '16.13'
+      - run: node --version
+      - run:
+          name: "Install Allure"
+          command: "npm install -g allure-commandline --save-dev"
       - run:
           name: "Check python version"
           command: "python --version"
