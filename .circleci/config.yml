@@ -17,19 +17,12 @@ jobs:
     steps:
       - checkout
       - allure/install
-      - openjdk-install/openjdk
       - run:
           name: "Check python version"
           command: "python --version"
       - run:
           name: "Install the requirements"
           command: "chmod +x scripts/install.sh; bash -v ./scripts/install.sh"
-      - setup_remote_docker:
-          version: 20.10.14
-          docker_layer_caching: true
-      - run:
-          name: "Run selenoid"
-          command: "chmod +x scripts/selenoid.sh; bash -v ./scripts/selenoid.sh"
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; bash -v ./scripts/run.sh"
