@@ -1,6 +1,6 @@
 #!/bin/bash
 python -m venv aqa-venv
-. aqa-venv/bin/activate
+source aqa-venv/bin/activate
 which python
 python --version
 pwd
