@@ -2,7 +2,7 @@
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
 orbs:
-  node: circleci/node@5.1.0
+  allure: ayte/allure@0.1.3
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -15,12 +15,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - node/install:
-          node-version: '16.13'
-      - run: node --version
-      - run:
-          name: "Install Allure"
-          command: "npm install -g allure-commandline --save-dev"
+      - allure-install
       - run:
           name: "Check python version"
           command: "python --version"
