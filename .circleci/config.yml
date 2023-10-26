@@ -30,9 +30,7 @@ jobs:
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; ./scripts/run.sh"
-      - run:
-          name: "Generate the test report"
-          command: "allure generate --report-dir allure-report allure-results"
+      - run: allure generate --report-dir allure-report allure-results
       - store_test_results:
           path: /home/circleci/project/allure-report
 # Orchestrate jobs using workflows
