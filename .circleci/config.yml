@@ -33,7 +33,7 @@ jobs:
           name: "Generate the test report"
           command: "chmod +x scripts/report.sh; ./scripts/report.sh"
       - store_test_results:
-          path: /home/circleci/project/allure-report
+          path: /home/circleci/project/allure-results
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
