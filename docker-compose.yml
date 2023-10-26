@@ -6,7 +6,7 @@ services:
     ports:
       - "4444:4444"
     volumes:
-      - "./:/etc/selenoid/"
+      - "$PWD:/etc/selenoid/"
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/etc/video:/opt/selenoid/video"
       - "/etc/logs:/opt/selenoid/logs"
