@@ -25,13 +25,14 @@ jobs:
           docker_layer_caching: true
       - run:
           name: "Run selenoid"
-          command: "docker-compose up -d; docker logs -f project-selenoid-1"
+          command: "docker run -d --name selenoid -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock -v ${PWD}:/etc/selenoid/ aerokube/selenoid:latest-release"
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; bash -v ./scripts/run.sh"
       - run:
           name: "Generate the test report"
           command: "chmod +x scripts/report.sh; bash -v ./scripts/report.sh"
+          when: always
       - store_test_results:
           path: /home/circleci/project/allure-report
 # Orchestrate jobs using workflows
