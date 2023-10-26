@@ -25,7 +25,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: "Run selenoid"
-          command: "docker-compose up -d; docker logs -f project-selenoid-1; docker exec ls -la project-selenoid-1"
+          command: "docker-compose up -d; docker logs -f project-selenoid-1; docker exec project-selenoid-1 ls -la"
       - run:
           name: "Run the tests"
           command: "chmod +x scripts/run.sh; bash -v ./scripts/run.sh"
