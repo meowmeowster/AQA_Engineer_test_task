@@ -2,6 +2,7 @@ version: '3'
 services:
   selenoid:
     image: aerokube/selenoid:latest-release
+    network_mode: host
     ports:
       - "4444:4444"
     volumes:
