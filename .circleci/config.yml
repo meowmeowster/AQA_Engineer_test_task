@@ -11,6 +11,10 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
       - image: cimg/python:3.11
+    java:
+      version: openjdk8
+    environment:
+      JAVA_HOME: /usr/lib/jvm/java-8-openjdk-amd64
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
