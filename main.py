@@ -18,7 +18,7 @@ def start_driver(remote):
     options.add_argument('ignore-certificate-errors')
     if remote:
         driver = webdriver.Remote(
-            command_executor="http://192.168.0.1:4444/wd/hub",
+            command_executor="http://selenoid:4444/wd/hub",
             options=options)
     else:
         service = webdriver.ChromeService()
