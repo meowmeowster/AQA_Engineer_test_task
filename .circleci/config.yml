@@ -1,8 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/configuration-reference
 version: 2.1
-orbs:
-  allure: ayte/allure@0.1.3
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
@@ -20,7 +19,7 @@ jobs:
           command: "python --version"
       - run:
           name: "Install the requirements"
-          command: "chmod +x scripts/install.sh; ./scripts/install.sh"
+          command: "chmod +x scripts/install.sh; bash -v ./scripts/install.sh"
       - setup_remote_docker:
           version: 20.10.14
           docker_layer_caching: true
@@ -29,8 +28,10 @@ jobs:
           command: "cd docker; docker-compose up -d"
       - run:
           name: "Run the tests"
-          command: "chmod +x scripts/run.sh; ./scripts/run.sh"
-      - run: "allure generate --report-dir allure-report allure-results"
+          command: "chmod +x scripts/run.sh; bash -v ./scripts/run.sh"
+      - run:
+          name: "Generate the test report"
+          command: "chmod +x scripts/report.sh; bash -v ./scripts/report.sh"
       - store_test_results:
           path: /home/circleci/project/allure-report
 # Orchestrate jobs using workflows
