@@ -24,6 +24,8 @@ jobs:
       - store_test_results:
           path: /home/circleci/project/allure-report/
       - store_test_results:
+          path: /home/circleci/project/allure-results/
+      - store_test_results:
           path: /home/circleci/project/results_ui.xml
 workflows:
   aqa-engineer-test-task:

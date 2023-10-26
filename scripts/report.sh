@@ -1,5 +1,5 @@
 #!/bin/bash
 source aqa-venv/bin/activate
 allure generate --report-dir allure-report
-allure serve
+cd allure-report
 ls -la
