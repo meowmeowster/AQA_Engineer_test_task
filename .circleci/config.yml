@@ -21,9 +21,9 @@ jobs:
           name: "Generate the test report"
           command: "chmod +x scripts/report.sh; bash -v ./scripts/report.sh"
           when: always
-      - store_test_results:
+      - store_artifacts:
           path: /home/circleci/project/allure-report/
-      - store_test_results:
+      - store_artifacts:
           path: /home/circleci/project/allure-results/
       - store_test_results:
           path: /home/circleci/project/results_ui.xml
