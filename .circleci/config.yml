@@ -15,7 +15,7 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
-      - allure-install
+      - allure/install
       - run:
           name: "Check python version"
           command: "python --version"
