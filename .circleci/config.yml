@@ -22,7 +22,7 @@ jobs:
           command: "chmod +x scripts/report.sh; bash -v ./scripts/report.sh"
           when: always
       - store_test_results:
-          path: /home/circleci/project/allure-report
+          path: /home/circleci/project/allure-report/
       - store_test_results:
           path: /home/circleci/project/results_ui.xml
 workflows:
