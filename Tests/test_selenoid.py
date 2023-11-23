@@ -4,7 +4,7 @@
 import pytest
 import allure
 from environment import load_address
-from Tests.test_base import BaseTestUI
+from Tests.test_base import *
 
 
 @allure.feature('SERVICE SMOKE')
@@ -22,5 +22,5 @@ class Tests(BaseTestUI):
     @pytest.mark.dependency(depends=['selenoid_running'])
     def test_site_opening(self):
         self.get_address(load_address())
-        assert self.BasePage.is_displayed_element(self, self.MainPage.desktop_logo) is True
-        self.BasePage.screenshot(self)
+        assert BasePage.is_displayed_element(self, MainPage.desktop_logo) is True
+        BasePage.screenshot(self)
